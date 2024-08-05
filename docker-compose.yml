@@ -1,0 +1,12 @@
+services:
+  writebook:
+    build: .
+    volumes:
+      - ./storage:/rails/storage
+    environment:
+      RAILS_ENV: production
+      DISABLE_SSL: true
+      RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+    ports:
+     - 80:3000
